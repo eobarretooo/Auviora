@@ -8,4 +8,13 @@
 *.gguf
 *.apk
 *.jks
+*.keystore
+*.p12
+*.pfx
+**/keystore.properties
+**/signing.properties
+/signing/
 __pycache__/
+*.key
+*.p8
+*.private.pem

@@ -1,0 +1,13 @@
+{
+  "reviewed_on": "2026-10-22",
+  "scope": "APK code and bundled runtime notices; no model-weight redistribution",
+  "binary_distribution_review": "complete",
+  "unresolved_binary_blockers": [],
+  "native_gitlink": "96bbf61710d44421ea54e63f5194f9b17c20d877",
+  "resolved_maven_records": 106,
+  "cached_runtime_artifact_records": 74,
+  "maven_inventory_sha256": "b362bc1fab6399e790ab9d8508f959800fe022e404669459ecbc3a46aea47254",
+  "notices_sha256": "8f084c447eccfb56a2dd13249b49d0dd4ac8a57373422f3bd56640cb38099545",
+  "model_weights_bundled": false,
+  "converted_model_redistribution_approved": false
+}

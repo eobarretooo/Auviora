@@ -27,3 +27,7 @@ Auviora sources use MIT with original reused notices preserved. Brand/icon are n
 2026-10-22 live publisher API check: project artifact revision 8716e5209f308fd53f197ccd7d50c6fdcc2dc37d still has no card license. OpenBMB base-model revision 379f120c2ff3588e6e06559ec6b9ec15cc05114e declares apache-2.0. This is not a license certification for the converted pair. No weights or packages are redistributed.
 
 Sources: [pinned project metadata](https://huggingface.co/api/models/tc-mb/MiniCPM-V-Apps-gguf/revision/8716e5209f308fd53f197ccd7d50c6fdcc2dc37d), [base model](https://huggingface.co/openbmb/MiniCPM-V-4.7-1B/tree/379f120c2ff3588e6e06559ec6b9ec15cc05114e).
+
+## Phase 2.2 binary notice preparation
+
+The current scoped APK-code redistribution inventory is in [RELEASE_AUDIT.md](RELEASE_AUDIT.md) and [release-audit.json](release-audit.json). Original Maven/native notices are now packaged in the APK and staged as an accompanying text asset. This closes the previous notice-assembly gap for the reviewed code inventory; it does not grant converted-model redistribution rights. No model weights are bundled. Permanent signing and publication status remain independent gates in the [release process](../RELEASE_PROCESS.md).
