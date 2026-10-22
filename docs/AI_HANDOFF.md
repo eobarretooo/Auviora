@@ -1,6 +1,12 @@
 # Auviora — AI handoff
 
-Updated 2026-10-22. **Phase 2.0 independent foundation COMPLETE for tested workloads. Phase 3 NOT STARTED.** Development build only; model quality/publication are not approved.
+Updated 2026-10-22. **Phase 2.1 presentation COMPLETE; Phase 2.0 foundation remains validated for tested workloads. Phase 3 NOT STARTED.** Development build only; model quality/publication are not approved.
+
+## Phase 2.1 continuation checkpoint
+
+Presentation only: premium truthful README, seven real screenshots, 8.5-second offline streaming GIF (469,746 bytes), original vector documentation logo, media manifest/workflow and Python standard-library scripts. Canonical design is now [docs/design/DESIGN.md](design/DESIGN.md); root DESIGN.md was moved without content loss. See [Phase 2.1 report](PHASES/PHASE_02_1.md), [media provenance](media/README.md), [contributing](CONTRIBUTING.md) and [future Android quality findings](design/ANDROID_QUALITY_BACKLOG.md).
+
+Fresh manual device capture used the exact installed Phase 2.0 APK hash. All eight raster assets decoded/checked, all local Markdown links/fences checked, GFM parsed and local desktop/mobile preview inspected. App source/build/native/license/original testing evidence unchanged; no app suite rerun. Offline radios and system locale restored, fixed dark theme/model unloaded. The response's eight items instead of ten are intentionally preserved. Navigation draft loss is a documented future issue, not repaired. No Phase 3, push, remote, release or tag. Exact commit checkpoints follow at closure.
 
 ## Current implementation
 
@@ -12,7 +18,7 @@ Updated 2026-10-22. **Phase 2.0 independent foundation COMPLETE for tested workl
 - Native READY requires language model/projector/context setup. One Application-owned adapter serializes all calls through a Mutex/dedicated executor; cancel is atomic/cooperative, sampler reset stays on owner thread, unload waits and releases model resources. Process backend/executor remains available for reload. Partial failures clean up and map errors.
 - Chat uses real Flow output and Stop; current phase stays visible. New chat identity is set before loading so drafts typed during load survive. Basic AtomicFile actual-message history persists; malformed history cannot be overwritten silently. Saved conversations are read-only until context restoration is implemented.
 
-## Latest verified evidence
+## Phase 2.0 verified evidence
 
 - Final app/test APK build PASS (6s); core JVM 5/5; lint app 0 errors/13 warnings, core 0 errors/1 warning, inference no issues. No suppression/baseline hides errors.
 - APK structural check: 10 ARM64 libraries, all ELF LOAD alignment>=16KB, JNI/OpenMP present, no desktop tool libraries. SHA-256 01a6ef514073b1eb3bb44e4168de7ea93b057e6a79f0467ecf4fdbc23809ae7e.
@@ -38,12 +44,12 @@ Closing documentation commit: retrieve with `git log -1 -- docs/AI_HANDOFF.md` (
 
 ## Boundaries and exact next action
 
-Do not start Phase 3 automatically. Next action is user review of the foundation/report and an explicit instruction selecting the next scope. Candidates: image attachments with new-app vision validation, saved-context/history management or additional lifecycle/device tests. Preserve the tested profile, model-quality failures, legal attribution and source baseline.
+Do not start Phase 3 automatically. Next action is user review of the presentation, media and quality backlog, followed by an explicit instruction selecting the next development scope. Candidates: image attachments with new-app vision validation, saved-context/history management or additional lifecycle/device tests. Preserve the tested profile, model-quality failures, legal attribution and source baseline.
 
 Not implemented: agents/tools, advanced memory, background automation, unrestricted control, TTS/video/image-attachment UI, advanced resumable/background downloads, history export/delete/migration/context restoration. SAF import exists but interactive picker/provider behavior was not separately tested. Tablet/light/dynamic visual matrices, TalkBack/font scaling, long contexts and extended stress are unverified. Compact-model Portuguese mixing, false identity and factual errors remain. Model conversion redistribution and binary notice assembly need publication review; no package/weight publication is authorized.
 
 ## Commands
 
-Set standard JAVA_HOME/ANDROID_HOME, run `git submodule update --init --recursive --depth 1`, then `./gradlew.bat :app:assembleDebug :app:assembleDebugAndroidTest :core:testDebugUnitTest :app:lintDebug :core:lintDebug :inference:lintDebug`. See [TESTING](TESTING.md), DESIGN.md, [architecture](ARCHITECTURE.md), [legal provenance](legal/PROVENANCE.md) and [development log](DEVELOPMENT_LOG.md).
+Set standard JAVA_HOME/ANDROID_HOME, run `git submodule update --init --recursive --depth 1`, then `./gradlew.bat :app:assembleDebug :app:assembleDebugAndroidTest :core:testDebugUnitTest :app:lintDebug :core:lintDebug :inference:lintDebug`. See [TESTING](TESTING.md), [design](design/DESIGN.md), [architecture](ARCHITECTURE.md), [legal provenance](legal/PROVENANCE.md) and [development log](DEVELOPMENT_LOG.md).
 
 Opt-in device runner requires provisioned verified weights: `./scripts/run-device-validation.ps1 -Serial SERIAL`, then `-Suite Streaming` for the visible stream/captures. Artifacts/raw logs/reproduction checkout remain ignored within this repository. Do not delete unrelated checkouts or alter the reference project. Canonical code/docs/commits are English; user communication is Brazilian Portuguese.

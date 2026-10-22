@@ -1,0 +1,71 @@
+{
+  "captured_on": "2026-10-22",
+  "application_id": "app.auviora.android",
+  "version": "0.1.0-alpha.1",
+  "apk_sha256": "01a6ef514073b1eb3bb44e4168de7ea93b057e6a79f0467ecf4fdbc23809ae7e",
+  "assets": [
+    {
+      "path": "brand/auviora.svg",
+      "bytes": 370,
+      "sha256": "b9cce679b2c54dfb72ff68a214f9848178388af0cd9cf6db639e189bfdeb799f"
+    },
+    {
+      "path": "gifs/offline-inference.gif",
+      "bytes": 469746,
+      "sha256": "ddb792399e2359af54ffb9c41e6f321c4c8aa50bb6726e8092f6cc6f8275f2eb",
+      "width": 480,
+      "height": 1003,
+      "frames": 102,
+      "duration_seconds": 8.5
+    },
+    {
+      "path": "screenshots/models-ready-dark.png",
+      "bytes": 147387,
+      "sha256": "75332d0e46e7ae47bb1c91a87af5e70c09cbb418f757d9bb24a107dcd80f86ed",
+      "width": 608,
+      "height": 1270
+    },
+    {
+      "path": "screenshots/navigation-dark.png",
+      "bytes": 105252,
+      "sha256": "01ac0e75dbc993d789b8856e44fd898425c5b76ce115560f7c607a9d3ef557f8",
+      "width": 608,
+      "height": 1270
+    },
+    {
+      "path": "screenshots/offline-chat-dark.png",
+      "bytes": 138176,
+      "sha256": "eb3099c60214cfce0ceb9c618b6a58526e462a5fd483833de8199b516d08f4b3",
+      "width": 608,
+      "height": 1270
+    },
+    {
+      "path": "screenshots/settings-dark.png",
+      "bytes": 109433,
+      "sha256": "38a271d71df7c7a099ac6040e5036bea7b873339ae741064d057aec3a27e253d",
+      "width": 608,
+      "height": 1270
+    },
+    {
+      "path": "screenshots/settings-light.png",
+      "bytes": 110751,
+      "sha256": "874dcad9c522acfe0999f3cc96c47370cca3952e6bb154ea73a980a394fa988d",
+      "width": 608,
+      "height": 1270
+    },
+    {
+      "path": "screenshots/welcome-dark.png",
+      "bytes": 79766,
+      "sha256": "41469c76cb38e5ca21caa1d47fbd846026906f5aae0e8b560c218c6d83d130a9",
+      "width": 608,
+      "height": 1270
+    },
+    {
+      "path": "screenshots/welcome-light.png",
+      "bytes": 78897,
+      "sha256": "09208077ad66e6e066560af0e9e2d613c04d8efd38764ee93f2f52c36e494485",
+      "width": 608,
+      "height": 1270
+    }
+  ]
+}

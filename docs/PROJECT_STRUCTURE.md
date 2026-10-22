@@ -16,9 +16,9 @@ core/                      Engine/model/error contracts, profile and verifier
 inference/                 Serial native adapter, JNI and CMake/v86 build
 vendor/llama.cpp-omni/      Public pinned submodule; expected patch-only modification
 patches/                   Reproducible Android portability patch
-scripts/                   Patch verification and validation helpers
+scripts/                   Patch, device validation and media/link helpers
 artifacts/                 Ignored build logs, captures and local reproduction checkout
-DESIGN.md                  Canonical UI contract
+docs/design/DESIGN.md      Canonical UI contract
 docs/                      Technical handoff, decisions, testing, design and legal
 ```
 

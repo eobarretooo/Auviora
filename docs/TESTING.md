@@ -48,3 +48,14 @@ The runner requires provisioned exact weights, verifies no active default networ
 An independent checkout/submodule initialization/build passed with automatic patch application. Subsequent production source checkpoint12b5a76 also built in that checkout. This is buildability evidence, not deterministic binary hashing.
 
 Inherited model quality limitations remain: language mixing, false identity, factual errors. The rain explanation is simplified model output, not validated scientific advice. Current measurements are samples rather than peak/thermal/TTFT benchmarks. SAF picker/import, broad tablet/dynamic-color/light visual matrices, TalkBack/font scaling, long-context and extended stress remain unverified. No production distribution/weight-license approval.
+
+## Phase 2.1 presentation verification
+
+No Android source/test/build changes; no rebuild or full regression rerun. The installed APK hash matched the previously validated APK. A fresh normal-UI offline generation, streaming capture and model load/unload were observed on Android 16; radios/locale/theme were restored. The literal eight-item response to a ten-sentence request is retained in [media provenance](media/README.md).
+
+```powershell
+python scripts/check-docs.py
+python scripts/media.py check docs/media/gifs/offline-inference.gif
+```
+
+Run the media checker on `docs/media/screenshots/*.png` paths too (expand them in PowerShell with Get-ChildItem, or list individual files). It verifies dimensions/size and GIF frame count/duration; human privacy/authenticity review remains necessary. PNG/GIF decoding, all local links, fenced blocks, GFM parsing and desktop/mobile local preview were checked; see [Phase 2.1](PHASES/PHASE_02_1.md). These checks add presentation evidence; they do not replace the historical app/JVM/lint/device suites above. Exact current checks and asset hashes are in the report and manifest.
