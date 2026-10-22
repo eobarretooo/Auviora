@@ -1,0 +1,16 @@
+{
+  "application_id": "app.auviora.android",
+  "version": "0.1.0-alpha.1",
+  "verified_load_ms": 4376,
+  "prompt": "What is 15 multiplied by 7?",
+  "response": "To find the product of 15 and 7, we can perform the multiplication:\n\n15 * 7 = 105\n\nSo, 15 multiplied by 7 is 105.",
+  "contains_105": true,
+  "visible_snapshots": 1,
+  "first_observed_text_ms": 1964,
+  "response_ms": 2122,
+  "post_cancel_response": "The sum of 2 plus 2 is 4.",
+  "pss_before_unload_kib": 2301220,
+  "pss_after_unload_kib": 276668,
+  "reload_ready": true,
+  "post_reload_response": "To find the result of 15 multiplied by 7, we can multiply 15 by 7.\n\n15 * 7 = 105\n\nSo, 15 multiplied by 7 is 105."
+}

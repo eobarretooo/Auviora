@@ -32,6 +32,19 @@ adb -s SERIAL shell am instrument -w -e class app.auviora.android.RealInferenceT
 Verify both exact artifacts before loading. The UI also supports SAF imports. Never access another app's private model directory/root. Download is foreground-only and does not resume after process death. Cancellation is cooperative; native prefill may finish before Stop takes effect.
 
 ## Current evidence
-Native/core build and 5 JVM tests PASS; patch fixture PASS. App and test APK build PASS. Hardware FoundationTest 2/2 and isolated ConversationRepositoryTest 2/2 PASS. APK structural check PASS: 10 ARM64 libraries, all ELF LOAD segments >=16KB, required OpenMP/JNI present, no desktop tools. Exact model provisioning and new-app inference are in progress; not yet claimed. Raw logs remain ignored in artifacts/. Device: 60a36dc3.
 
-Retain model quality failures inherited from Phase1.6: language mixing, false identity, factual errors and ~24s vision samples. Do not transfer those old measurements into new-app benchmark claims. No production distribution/weight license approval.
+[Full report](testing/PHASE_02_VALIDATION.md) and [machine-readable checks](testing/phase2-checks.json). Final app/test builds PASS; core JVM 5/5; app lint 0 errors/13 warnings, core 0 errors/1 warning, inference no issues. Native patch fixture PASS. APK structural check PASS: 10 ARM64 libraries, all ELF LOAD segments >=16KB, required OpenMP/JNI present, no desktop tools.
+
+Hardware FoundationTest 2/2 and ConversationRepositoryTest 2/2 PASS. Exact in-app provisioning 1/1; final offline UI inference/cancel/recovery/unload/reload 1/1 and visible streaming 1/1 (33 updates). No mocks or canned runtime output. Test-only streaming observation uses the pinned Compose Android view semantics owner, respects enabled actions and advances the test frame clock while real IO runs. Framework upgrades must revalidate this interop. Failed intermediate observers are documented, not counted as positive engine evidence.
+
+```powershell
+python scripts/verify-project.py --apk app/build/outputs/apk/debug/app-debug.apk
+./scripts/run-device-validation.ps1 -Serial SERIAL
+./scripts/run-device-validation.ps1 -Serial SERIAL -Suite Streaming
+```
+
+The runner requires provisioned exact weights, verifies no active default network after asynchronous teardown, saves/restores network settings and copies raw UTF-8 JSON bytes. StreamingVisualTest is skipped without realInference=true. No runtime test endpoint or AccessibilityService is shipped. Screenshots/literal outputs are sanitized in docs/testing; raw logs, local reproduction clone, APKs and weights remain ignored or in the app sandbox. Original settings were verified restored to airplane0/Wi-Fi1/mobile-data0 after tests.
+
+An independent checkout/submodule initialization/build passed with automatic patch application. Subsequent production source checkpoint12b5a76 also built in that checkout. This is buildability evidence, not deterministic binary hashing.
+
+Inherited model quality limitations remain: language mixing, false identity, factual errors. The rain explanation is simplified model output, not validated scientific advice. Current measurements are samples rather than peak/thermal/TTFT benchmarks. SAF picker/import, broad tablet/dynamic-color/light visual matrices, TalkBack/font scaling, long-context and extended stress remain unverified. No production distribution/weight-license approval.
