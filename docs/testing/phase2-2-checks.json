@@ -3,7 +3,7 @@
   "versionName": "0.1.0-alpha.1",
   "versionCode": 1,
   "debug_apk_sha256": "e0b5161e8fdf970486a337912a27bcfa1ac6dbd08b58e80afad49c23c80aaab0",
-  "release_build": "PASS unsigned candidate only",
+  "release_build": "PASS permanent-key signed candidate from committed source",
   "core_jvm": {
     "passed": 5,
     "failed": 0
@@ -37,8 +37,126 @@
     "distinct_visible_updates": 27,
     "network_settings_restored": true
   },
-  "signed_release_signature_verified": false,
-  "signed_release_device_tested": false,
-  "github_release_created": false,
-  "reason": "Owner permanent signing identity/public pin and signed candidate pending. No uninstall or data export."
+  "signed_release_signature_verified": true,
+  "signed_release_device_tested": true,
+  "github_release_created": true,
+  "signed_release_physical_hardware_tested": false,
+  "release_artifact": {
+    "versionName": "0.1.0-alpha.1",
+    "versionCode": 1,
+    "package": "app.auviora.android",
+    "abi": "arm64-v8a",
+    "minSdk": 24,
+    "targetSdk": 36,
+    "signed": true,
+    "certificateSha256": "e19c9d002254a776d6b19c0ad2c1dcee01971a46971d5d1fb915867bd6530a2a",
+    "bytes": 42736118,
+    "sha256": "19a4587de5d47a46f266a20d6c11a8ffc64459950b8feffcfb5dda13efd869ba",
+    "native_libraries": [
+      "libandroidx.graphics.path.so",
+      "libauviora_inference.so",
+      "libggml-base.so",
+      "libggml-cpu-v86.so",
+      "libggml-cpu.so",
+      "libggml.so",
+      "libllama-common.so",
+      "libllama.so",
+      "libmtmd.so",
+      "libomp.so"
+    ],
+    "native_16kb_alignment": true,
+    "zipalign": true,
+    "bundled_weights": false,
+    "notices_sha256": "8f084c447eccfb56a2dd13249b49d0dd4ac8a57373422f3bd56640cb38099545",
+    "source_commit": "4997566a22e4425f6d8f4d4f1800ff99ab7be96f",
+    "parent_worktree_dirty": false,
+    "checks": {
+      "app_lint_warnings": 13,
+      "core_lint_warnings": 1,
+      "inference_lint_warnings": 0,
+      "core_jvm_tests": 5
+    }
+  },
+  "public_distribution": {
+    "anonymous_public_download": true,
+    "release_url": "https://github.com/eobarretooo/Auviora/releases/tag/v0.1.0-alpha.1",
+    "published_at": "2026-10-22T19:27:15Z",
+    "prerelease": true,
+    "assets": [
+      {
+        "name": "Auviora-v0.1.0-alpha.1-arm64-v8a.apk",
+        "http_status": 200,
+        "bytes": 42736118,
+        "sha256": "19a4587de5d47a46f266a20d6c11a8ffc64459950b8feffcfb5dda13efd869ba",
+        "matches_candidate": true
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "http_status": 200,
+        "bytes": 104,
+        "sha256": "6bef963eaf44e7cb7b257536d6913928c6b27e60de5a5d05e3e964bcfcc0c3bd",
+        "matches_candidate": true
+      },
+      {
+        "name": "THIRD_PARTY_NOTICES.txt",
+        "http_status": 200,
+        "bytes": 1859580,
+        "sha256": "8f084c447eccfb56a2dd13249b49d0dd4ac8a57373422f3bd56640cb38099545",
+        "matches_candidate": true
+      },
+      {
+        "name": "verification.json",
+        "http_status": 200,
+        "bytes": 1061,
+        "sha256": "c9c55e61cc5c63e8fe97fcc859da73a72d6c6f52354d20365e9bd82bff1c36c0",
+        "matches_candidate": true
+      }
+    ]
+  },
+  "release_tag": {
+    "name": "v0.1.0-alpha.1",
+    "type": "annotated",
+    "object": "a51b6071902cc205c14bf10861bad2a93cb1b418",
+    "peeled_commit": "4997566a22e4425f6d8f4d4f1800ff99ab7be96f"
+  },
+  "backup_checks": {
+    "owner_requested_copies": true,
+    "outside_repository": true,
+    "two_distinct_physical_disks": true,
+    "all_three_files_identical_per_backup": true,
+    "owner_only_acl_verified": true,
+    "separate_password_storage_owner_confirmed": true,
+    "password_read_or_copied_by_agent": false,
+    "additional_off_device_backup_verified": false
+  },
+  "signed_release_emulator": {
+    "android_version": "9",
+    "android_api": 28,
+    "host_abi": "x86_64",
+    "apk_abi": "arm64-v8a",
+    "native_translation": "libnb/Houdini",
+    "installation": "PASS exact published APK",
+    "normal_ui_provisioning_integrity_load": "PASS",
+    "visible_response_growth": "PASS observed in screenshots, no token-rate benchmark",
+    "prompt": "What is 15 multiplied by 7?",
+    "literal_response": "To find the product of 15 and 7, we can multiply them directly:\n\n15 * 7 = 105\n\nSo, 15 multiplied by 7 is 105.",
+    "stop": "PASS returned to READY after partial forest story",
+    "stopped_literal_partial_response": "In the heart of",
+    "unload_reload": "PASS",
+    "post_reload_prompt": "What is 2 plus 2? Answer with one number.",
+    "post_reload_response": "4",
+    "offline_isolation_established": false,
+    "network_limitation": "eth0 default network remained active; protected AIRPLANE_MODE broadcast denied",
+    "restored_radio_settings": {
+      "airplane": 0,
+      "wifi": 0,
+      "mobile_data": 1
+    },
+    "final_model_state": "UNLOADED",
+    "downloaded_files_retained": true,
+    "pss_sample_before_unload_kib": 1521520,
+    "pss_sample_after_unload_kib": 1369537,
+    "pss_limit": "Samples under native translation; not a peak benchmark or leak determination",
+    "debug_installation_or_private_data_removed": false
+  }
 }

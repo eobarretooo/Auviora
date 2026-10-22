@@ -47,7 +47,7 @@ The runner requires provisioned exact weights, verifies no active default networ
 
 An independent checkout/submodule initialization/build passed with automatic patch application. Subsequent production source checkpoint12b5a76 also built in that checkout. This is buildability evidence, not deterministic binary hashing.
 
-Inherited model quality limitations remain: language mixing, false identity, factual errors. The rain explanation is simplified model output, not validated scientific advice. Current measurements are samples rather than peak/thermal/TTFT benchmarks. SAF picker/import, broad tablet/dynamic-color/light visual matrices, TalkBack/font scaling, long-context and extended stress remain unverified. No production distribution/weight-license approval.
+Inherited model quality limitations remain: language mixing, false identity, factual errors. The rain explanation is simplified model output, not validated scientific advice. Current measurements are samples rather than peak/thermal/TTFT benchmarks. SAF picker/import, broad tablet/dynamic-color/light visual matrices, TalkBack/font scaling, long-context and extended stress remain unverified. Alpha binary distribution was reviewed separately in Phase 2.2; model-weight redistribution remains unapproved.
 
 ## Phase 2.1 presentation verification
 
@@ -67,3 +67,7 @@ Release configuration now supports an explicit unsigned candidate and an owner-m
 `python scripts/test-release.py -v` requires the built unsigned APK and ANDROID_HOME. It checks a real candidate and rejection of unsigned distribution, debug APKs, hidden GGUF fixtures, changed notices and stale embedded source commits. ZIP fixtures are ignored and are not inference evidence. The verifier also checks all ten native ELF alignments, ZIP alignment, compiled identity/version/ABI/SDK and exact source/notice assets.
 
 Fresh hardware debug source-regression tests: navigation/history 4/4, actual offline inference/cancel/reload 1/1 and visible streaming 1/1 PASS. Debug update preserved private data/weights. Those results do not assert a permanent-key release APK was installed. The debug certificate differs from the intended release identity; no automatic uninstall or data transfer occurs. Detailed status, logs and limits: [Phase 2.2](PHASES/PHASE_02_2.md), [release process](RELEASE_PROCESS.md).
+
+The exact permanent-key signed release from 4997566 was subsequently installed on an Android 9/API 28 x86_64 emulator via ARM64 translation. Normal UI tests passed actual model download/integrity/load, streamed answer 105, Stop, unload/reload and post-reload answer 4. This is separate from debug instrumentation and physical ARM64 evidence. Emulator network isolation was not established: eth0 stayed the default network and the airplane broadcast was denied; settings restored to 0/0/1. Final model unloaded. No signed-release physical hardware or broad compatibility claim follows.
+
+After draft verification and publication, all four assets were fetched anonymously with HTTP 200 and matched local hashes. The downloaded APK was reverified for signature/source/metadata/native/notice/weight checks before documentation HEAD advanced. Current evidence is in [phase2-2-checks.json](testing/phase2-2-checks.json); release verification.json remains bound to the immutable tag, not later documentation commits.

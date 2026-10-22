@@ -4,7 +4,9 @@ Scope: local Windows release preparation and explicit GitHub draft/publication. 
 
 ## Current status
 
-Release configuration, unsigned candidate, runtime notices and validation infrastructure are prepared. The owner created the permanent identity and its independently checked public certificate pin is committed. Publication is blocked pending backup confirmation and signed-candidate verification. The Windows PowerShell 5.1 expected-conflict fixture interruption has been reproduced and fixed; full unsigned preparation passes on that shell. Building never creates a tag/release. See [Phase 2.2](PHASES/PHASE_02_2.md).
+[v0.1.0-alpha.1](https://github.com/eobarretooo/Auviora/releases/tag/v0.1.0-alpha.1) is published as a pre-release from exact source 4997566a22e4425f6d8f4d4f1800ff99ab7be96f. Permanent-key signing, backup checks, signed emulator execution, draft validation and anonymous public downloads passed. The annotated tag and four assets are immutable release records; later documentation commits do not retag them. The Windows PowerShell 5.1 fixture correction is included. Building still never creates a tag/release; draft/publication remain explicit. See [Phase 2.2](PHASES/PHASE_02_2.md).
+
+The initial version is already distributed. Future application releases must select a new versionName and a versionCode above 1, retain the same key and repeat all checks. For historical reproduction, check out the release tag in an independent worktree; a newer main may only add publication documentation, but is not the APK's embedded source.
 
 ## Tools and GitHub access
 

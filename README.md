@@ -19,13 +19,15 @@
 
 Auviora is an offline-first AI application built with Kotlin and Jetpack Compose. Its independent Android interface connects to a pinned `llama.cpp-omni` backend through a dedicated inference module. Model files are provisioned explicitly; text generation then runs locally, including streaming and cancellation.
 
-**Development preview: `0.1.0-alpha.1` (code 1).** The application foundation and real offline text inference have been validated on Android hardware. There is no published APK release or bundled model. Auviora is being built toward multimodal assistance; the current chat accepts **text only**. The backend includes a vision projector, but image attachment and vision validation in this application remain future work.
+**Alpha: `0.1.0-alpha.1` (code 1).** A signed ARM64 APK is available through GitHub Releases; model files are obtained separately. The application foundation and real offline text inference have been validated on Android hardware. Auviora is being built toward multimodal assistance; the current chat accepts **text only**. The backend includes a vision projector, but image attachment and vision validation in this application remain future work.
 
 ## Download the Alpha
 
 [**GitHub Releases — Auviora Alpha**](https://github.com/eobarretooo/Auviora/releases)
 
-The release process is being established for **v0.1.0-alpha.1**. A signed downloadable APK has not been published yet; do not install or distribute an unsigned local candidate. When available, download the ARM64 APK and SHA256SUMS.txt from the actual release and compare the APK with `Get-FileHash FILE.apk -Algorithm SHA256` before installation.
+**[Download the signed ARM64 APK](https://github.com/eobarretooo/Auviora/releases/download/v0.1.0-alpha.1/Auviora-v0.1.0-alpha.1-arm64-v8a.apk)** · [v0.1.0-alpha.1 release](https://github.com/eobarretooo/Auviora/releases/tag/v0.1.0-alpha.1) · [SHA256SUMS.txt](https://github.com/eobarretooo/Auviora/releases/download/v0.1.0-alpha.1/SHA256SUMS.txt)
+
+Published on 2026-10-22 as a pre-release. APK size: 42,736,118 bytes (40.76 MiB). Compare `Get-FileHash FILE.apk -Algorithm SHA256` with the checksum file before installation. The exact public downloads were retrieved anonymously and verified against the tested candidate.
 
 The build requires an ARM64 device with API 24+; hardware evidence is currently Android 16 only. Model files are downloaded separately (approximately 1.78 GB); downloading uses internet, inference after provisioning is local. A release certificate differs from debug: replacing a debug installation may require uninstalling, which deletes private conversations and downloaded models. **No automatic uninstall is performed.** Read the [release process](docs/RELEASE_PROCESS.md), [Alpha notes](docs/releases/v0.1.0-alpha.1.md) and [changelog](docs/CHANGELOG.md) before installing.
 
