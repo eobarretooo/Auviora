@@ -46,8 +46,8 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         finally { working.value = false }
     }
     fun load() = operation {
-        app.engine.load(app.models.model, app.models.directory)
         chat.value = ChatState()
+        app.engine.load(app.models.model, app.models.directory)
     }
     fun unload() = operation { app.engine.cancel(); generation?.join(); app.engine.unload() }
     fun download() { provisioning = operation { app.models.download() } }

@@ -38,7 +38,7 @@
     <string name="files_missing">Model files not provisioned</string>
     <string name="import_model">Import language model</string>
     <string name="import_projector">Import vision projector</string>
-    <string name="import_notice">Choose the exact Phase 1.6 files. Size and SHA-256 are checked before use.</string>
+    <string name="import_notice">Choose the matching language model and vision projector. Files are checked before use.</string>
     <string name="provisioning">Preparing model files…</string>
     <string name="error_missing">A required model file is missing. Open Models to download or import it.</string>
     <string name="error_invalid">Model verification failed. Choose the exact compatible artifact or download it again.</string>
@@ -68,6 +68,6 @@
     <string name="no_results">No matching conversations</string>
     <string name="chat_hint">Load a verified model to start a conversation.</string>
     <string name="cancel_download">Cancel download</string>
-    <string name="model_verified">Exact artifacts, verified locally</string>
-    <string name="engine_note">The vision backend is integrated. Image attachments and advanced chat are scheduled for a later phase.</string>
+    <string name="model_verified">Model files and integrity</string>
+    <string name="engine_note">Image attachments will be available in a future update.</string>
 </resources>

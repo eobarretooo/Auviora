@@ -30,6 +30,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.auviora.android.data.*
@@ -101,6 +102,9 @@ private fun EngineError.label() = when (this) {
                 val content: @Composable () -> Unit = {
                     Column(Modifier.fillMaxSize().statusBarsPadding()) {
                         AppHeader(destination, onMenu = { if (wide) sidebar = !sidebar else scope.launch { drawer.open() } }, onModel = { select(Destination.MODELS) })
+                        if (destination == Destination.CHAT && chat.messages.isNotEmpty()) {
+                            Box(Modifier.padding(horizontal = Space.page, vertical = 8.dp)) { StatusBadge(engine.phase) }
+                        }
                         error?.let {
                             Surface(Modifier.fillMaxWidth().padding(horizontal = Space.page), color = MaterialTheme.colorScheme.errorContainer, shape = MaterialTheme.shapes.medium) {
                                 Column(Modifier.padding(Space.medium)) {
@@ -189,11 +193,11 @@ private fun EngineError.label() = when (this) {
         if (chat.messages.isEmpty()) Column(Modifier.widthIn(max = 560.dp).padding(Space.large), horizontalAlignment = Alignment.CenterHorizontally) {
             BrandMark(80)
             Spacer(Modifier.height(24.dp))
-            Text(stringResource(R.string.welcome), style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+            Text(stringResource(R.string.welcome), style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
             Spacer(Modifier.height(12.dp))
-            Text(stringResource(R.string.welcome_support), style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(stringResource(R.string.welcome_support), style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
             Spacer(Modifier.height(32.dp)); StatusBadge(phase)
-            if (phase == EnginePhase.UNLOADED || phase == EnginePhase.ERROR) TextButton(onClick = models) { Text(stringResource(R.string.chat_hint)) }
+            if (phase == EnginePhase.UNLOADED || phase == EnginePhase.ERROR) TextButton(onClick = models) { Text(stringResource(R.string.chat_hint), textAlign = TextAlign.Center) }
         } else LazyColumn(Modifier.fillMaxSize().testTag("messages"), state = list, contentPadding = PaddingValues(Space.page), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             items(chat.messages.size) { index ->
                 val message = chat.messages[index]

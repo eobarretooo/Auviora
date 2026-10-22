@@ -38,7 +38,7 @@
     <string name="files_missing">Arquivos do modelo ausentes</string>
     <string name="import_model">Importar modelo de linguagem</string>
     <string name="import_projector">Importar projetor visual</string>
-    <string name="import_notice">Escolha os arquivos exatos da fase 1.6. Tamanho e SHA-256 são verificados antes do uso.</string>
+    <string name="import_notice">Escolha o modelo de linguagem e o projetor visual compatíveis. Os arquivos são verificados antes do uso.</string>
     <string name="provisioning">Preparando arquivos do modelo…</string>
     <string name="error_missing">Um arquivo obrigatório do modelo está ausente. Abra Modelos para baixar ou importar.</string>
     <string name="error_invalid">A verificação do modelo falhou. Escolha o arquivo compatível exato ou baixe novamente.</string>
@@ -68,6 +68,6 @@
     <string name="no_results">Nenhuma conversa encontrada</string>
     <string name="chat_hint">Carregue um modelo verificado para iniciar uma conversa.</string>
     <string name="cancel_download">Cancelar download</string>
-    <string name="model_verified">Arquivos exatos, verificados localmente</string>
-    <string name="engine_note">O motor visual está integrado. Anexos de imagem e conversa avançada estão previstos para uma fase futura.</string>
+    <string name="model_verified">Arquivos e integridade do modelo</string>
+    <string name="engine_note">Anexos de imagem estarão disponíveis em uma atualização futura.</string>
 </resources>
