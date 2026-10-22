@@ -1,6 +1,6 @@
 # Architecture
 
-Phase 2.0 in progress. app → core ← inference. app composes the implementation; feature UI never imports JNI/native classes.
+Implemented Phase 2.0 foundation. app → core ← inference. app composes the implementation; feature UI never imports JNI/native classes.
 
 - core: model descriptors, exact artifact profile, full size/SHA-256/GGUF verifier, engine state/error contract and streamed generation requests.
 - inference: one process-scoped LlamaInferenceEngine, Mutex and dedicated single executor, NativeBridge, text/vision JNI and pinned backend. Ownership survives Activity recreation through Application; no destroyed singleton.
@@ -11,3 +11,7 @@ All native calls serialize, including across Flow suspension. cancel only sets a
 Only one validated MiniCPM profile exists. Future backends implement LocalInferenceEngine; new architectures need their own native compatibility/hardware validation. Additional native engines in the same process must not instantiate another owner of these global pointers.
 
 The reference TTS/video/demo UI and downloader are not copied. A generic image request is retained in the contract/native path; attachment UI and multimodal migration tests are later work.
+
+Local inference state and UI operation completion are distinct: the ViewModel prevents actions during ongoing provisioning/load work and starts a fresh chat identity before loading. Existing conversations show the active engine phase. AtomicFile history preserves actual messages; unreadable history blocks overwriting until an explicit recovery policy exists. Saved conversations are read-only, without pretending to restore native context.
+
+Model unload frees projector/sampler/context/model allocations; the process-owned backend/executor remains available for reload until process exit. No foreground inference service, scheduler, agent registry or sensitive permission is introduced. Current verified behavior and gaps: [validation report](testing/PHASE_02_VALIDATION.md).

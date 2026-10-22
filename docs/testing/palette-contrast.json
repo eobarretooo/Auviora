@@ -1,0 +1,22 @@
+{
+  "dark": {
+    "onBackground/background": 17.41,
+    "onSurface/surface": 15.25,
+    "onPrimary/primary": 5.38,
+    "onSecondary/secondary": 8.3,
+    "onPrimaryContainer/primaryContainer": 10.21,
+    "onSecondaryContainer/secondaryContainer": 7.66,
+    "onSurfaceVariant/surfaceVariant": 7.66,
+    "onError/error": 7.72
+  },
+  "light": {
+    "onBackground/background": 15.65,
+    "onSurface/surface": 16.15,
+    "onPrimary/primary": 7.27,
+    "onSecondary/secondary": 6.49,
+    "onPrimaryContainer/primaryContainer": 12.63,
+    "onSecondaryContainer/secondaryContainer": 13.24,
+    "onSurfaceVariant/surfaceVariant": 7.1,
+    "onError/error": 6.46
+  }
+}

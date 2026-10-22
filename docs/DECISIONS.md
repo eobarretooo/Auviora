@@ -10,3 +10,5 @@
 - Native engine is process-global; one serial executor owns every JNI operation, with cooperative cancellation checked between tokens. No Activity-owned singleton destruction.
 - Pinned HTTPS download/import uses staging, full SHA-256 and size checks before promotion/load. No reuse across Android sandboxes. No bundled weights.
 - Source notices and model terms are separate; no weight/package redistribution in this phase.
+
+Official API references consulted: [Compose compiler setup](https://developer.android.com/develop/ui/compose/setup-compose-dependencies-and-compiler) (compiler plugin must match Kotlin; latest examples are not automatically this project's pinned version), [per-app locales](https://developer.android.com/guide/topics/resources/app-languages) (AppCompatActivity supports the pre-33 path), [Compose UIAutomator interoperability](https://developer.android.com/develop/ui/compose/testing/interoperability) (test tags/resource IDs for instrumentation observation). Hardware tests validate the selected integration; documentation snippets alone do not.

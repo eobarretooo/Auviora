@@ -17,4 +17,9 @@ All notable changes are documented here using Keep a Changelog conventions and S
 - SHA-256/size checks before model promotion/loading, HTTPS-only provisioning, no cloud inference fallback.
 - Android backup/transfer exclusions; no sensitive runtime permissions or prompt/token bridge logging.
 
+### Fixed
+- Complete ARM64/OpenMP packaging and 16KB native alignment without a vendor upgrade.
+- Draft preservation during model load and accurate visible engine states.
+- Test-frame-clock observation and asynchronous network teardown verification.
+
 There is no released version section yet. Do not create tags or publish packages without explicit authorization.

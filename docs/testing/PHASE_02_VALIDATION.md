@@ -71,7 +71,7 @@ The runner also initially checked network teardown too soon; bounded polling now
 
 Remaining lint warnings concern pinned dependency updates and platform attribute/target advice; no lint baseline or broad suppression hides errors. Native vendor/compiler and Gradle deprecation warnings remain visible in logs. Lint alone initially missed some transitive 4KB libraries; all targets now inherit 16KB linker alignment, and APK ELF inspection covers each packaged library. The imported NDK OpenMP runtime is explicitly packaged.
 
-Inspected real screenshots: [welcome](phase2-welcome.png), [left drawer/history](phase2-drawer.png), [loaded model](phase2-models.png), [streamed chat](phase2-chat.png). They show the pt-BR interface on this phone. English/Portuguese switching was separately exercised. No bottom navigation exists. Screenshot review is not an exhaustive accessibility audit.
+Inspected real screenshots: [welcome](phase2-welcome.png), [left drawer/history](phase2-drawer.png), [loaded model](phase2-models.png), [streamed chat](phase2-chat.png). They show the pt-BR interface on this phone. English/Portuguese switching was separately exercised. No bottom navigation exists. Static [palette text contrast](palette-contrast.json) passed 16 explicit dark/light pairs with minimum 5.38:1. Screenshot/contrast review is not an exhaustive accessibility audit.
 
 ## Limits and readiness
 
