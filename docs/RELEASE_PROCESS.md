@@ -4,7 +4,7 @@ Scope: local Windows release preparation and explicit GitHub draft/publication. 
 
 ## Current status
 
-Release configuration, unsigned candidate, runtime notices and validation infrastructure are prepared. Publication is blocked until the owner creates and backs up the permanent signing identity, commits its public certificate pin and completes signed-candidate verification. Building never creates a tag/release. See [Phase 2.2](PHASES/PHASE_02_2.md).
+Release configuration, unsigned candidate, runtime notices and validation infrastructure are prepared. The owner created the permanent identity and its independently checked public certificate pin is committed. Publication is blocked pending backup confirmation and signed-candidate verification. The Windows PowerShell 5.1 expected-conflict fixture interruption has been reproduced and fixed; full unsigned preparation passes on that shell. Building never creates a tag/release. See [Phase 2.2](PHASES/PHASE_02_2.md).
 
 ## Tools and GitHub access
 

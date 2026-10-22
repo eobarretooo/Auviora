@@ -1,6 +1,6 @@
 # Phase 2.2 — release infrastructure and first Alpha candidate
 
-Date: 2026-10-22. **Infrastructure and unsigned candidate validated. Public distribution blocked pending the owner's permanent signing identity and signed-candidate checks. Phase 3 not started.** Version remains 0.1.0-alpha.1 / code 1. No release or tag has been created, and no source/tag push was performed by this phase.
+Date: 2026-10-22. **Infrastructure and unsigned candidate validated; permanent public certificate pinned. Public distribution blocked pending backup confirmation and signed-candidate checks. Phase 3 not started.** Version remains 0.1.0-alpha.1 / code 1. No release or tag has been created, and no source/tag push was performed by this phase.
 
 ## Repository and access
 
@@ -9,10 +9,10 @@ Existing origin is https://github.com/eobarretooo/Auviora.git. The public reposi
 ## Implementation
 
 - Gradle release signing uses four environment variables, requires a complete configuration and has no debug fallback. Missing identity fails unless an explicitly unsigned candidate is requested. Application ID/ABI/version remain unchanged; minification/toolchain/native engine are not upgraded.
-- Owner-interactive setup creates an external persistent PKCS12/RSA4096 key, restricts a new dedicated Windows directory, never overwrites identity and exports only public certificate metadata. The owner selected this path and intends to retain separate backups; creation/backup completion has not been reported or observed. No temporary public signing identity was generated.
+- Owner-interactive setup creates an external persistent PKCS12/RSA4096 key, restricts a new dedicated Windows directory, never overwrites identity and exports only public certificate metadata. The owner created the identity; its public DER and password-free metadata independently match the committed pin. Separate backup completion remains unconfirmed. No temporary public signing identity was generated.
 - Local preparation resolves notices, tests the patch, builds/tests/lints, verifies/stages the APK, and clears signing credentials. A generated release asset binds the APK to the exact Git commit through the AGP Variant API. Signed candidates require committed parent source and a matching public certificate pin.
 - Artifact verification checks compiled identity/version/SDK/debuggable/ABI, all 10 ARM64 ELF libraries, 16 KB LOAD/ZIP alignment, no GGUF names/magic, exact notice bytes, signature/certificate and staged checksum. Existing candidates are never overwritten. Unsigned names explicitly end in -UNSIGNED.apk.
-- Controlled draft/publish tooling derives origin, protects existing releases/tags, checks monotonic codes and the scoped legal inventory, creates an annotated exact-source tag only after gates, uses a draft pre-release, re-downloads all four assets and checks their hashes before publication. Public mutation paths remain unexecuted because signing is unavailable.
+- Controlled draft/publish tooling derives origin, protects existing releases/tags, checks monotonic codes and the scoped legal inventory, creates an annotated exact-source tag only after gates, uses a draft pre-release, re-downloads all four assets and checks their hashes before publication. Public mutation paths remain unexecuted pending backup confirmation and the verified signed candidate.
 - Runtime notice bundle includes original source/native/Maven licenses and a conservative complete NDK notice superset. The current graph has 106 module records / 74 cached artifact records. No model weights are included or approved for redistribution.
 - English/pt-BR README download guidance links to the actual Releases page, without a fake direct APK URL. Alpha notes, release process, contribution instructions, changelog, testing, roadmap and handoff describe the actual blocked state.
 
@@ -30,7 +30,7 @@ Existing origin is https://github.com/eobarretooo/Auviora.git. The public reposi
 | Fresh hardware debug navigation/history |4/4 PASS |
 | Fresh hardware debug offline inference/cancel/reload |1/1 PASS |
 | Fresh hardware debug offline visible streaming |1/1 PASS |
-| Owner permanent signature / signed APK |BLOCKED; key/public pin absent |
+| Owner permanent signature / signed APK |Permanent identity created and public pin verified; signed preparation requires retry after the PowerShell fixture correction |
 | Signed release installed on hardware |NOT RUN; no destructive debug replacement |
 | GitHub draft/tag/publication/asset URLs |NOT CREATED; signing gate stops them |
 
@@ -48,12 +48,18 @@ No dependency upgrade or engine modification was used to hide failures. Core has
 
 ## Exact continuation
 
-1. The owner completes scripts/setup-release-key.ps1 locally and retains encrypted keystore backups/password separately. Never send a password through chat.
-2. Record/commit only the approved public certificate fingerprint as described in [release process](../RELEASE_PROCESS.md).
+1. The owner confirms encrypted keystore backups/password retained separately. The permanent identity has already been created; do not replace it. Never send a password through chat.
+2. The approved public certificate fingerprint was independently verified and committed in 489a1d0. Preserve that pin as described in [release process](../RELEASE_PROCESS.md).
 3. Run the signed preparation script in the owner's local terminal. Inspect signature, source commit, checksum and all reports. Preserve the debug app or use separate test hardware/profile; do not automatically uninstall it.
 4. If every gate passes, use the explicit draft workflow, verify downloaded assets, then publish the pre-release. Verify real public URLs/bytes and update publication documentation. Never substitute the current unsigned candidate.
 
 Local Windows automation is the validated path; hosted Actions signing/publication has not been exercised and no automatically publishing workflow is installed. Model conversion terms remain separate; weights are not bundled. See [binary audit](../legal/RELEASE_AUDIT.md), [Alpha notes](../releases/v0.1.0-alpha.1.md) and [release process](../RELEASE_PROCESS.md).
+
+## Windows PowerShell 5.1 signed-preparation interruption
+
+The first owner-signed attempt stopped in the deliberately conflicting native-patch fixture, before APK compilation. Reproduced the exact NativeCommandError on Windows PowerShell 5.1.19041.3803: native stderr redirected with 2>&1 becomes an error record, so ErrorActionPreference=Stop prevents checking the expected nonzero exit. The fixture now captures this expected failure with a narrowly scoped Continue preference, restores the previous preference, and checks exit code 1, the specific conflict diagnostic and unchanged fixture source. Unexpected failures remain failures. No engine, patch, signing identity or dependency was changed.
+
+The fixture passed on Windows PowerShell 5.1 and PowerShell 7.6.5 with PSNativeCommandUseErrorActionPreference enabled. Full unsigned preparation passed under 5.1, including release assembly (9s incremental), five cached core JVM test results, release lint with 0 errors/13+1+0 warnings and artifact checks. This explicitly unsigned, dirty-source diagnostic candidate is not distributable. The permanent signed APK and emulator runtime checks remain pending the owner's local retry.
 
 ## Commit checkpoints
 

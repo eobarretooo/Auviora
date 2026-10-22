@@ -21,8 +21,19 @@ try {
     if ((Get-FileHash $source).Hash -ne $original) { throw 'Reverse patch did not restore source' }
     [IO.File]::WriteAllText($source, ([IO.File]::ReadAllText($source).Replace('void apply_experts_nocache(bool on)', 'void conflicting_local_edit(bool on)')))
     $conflicting = (Get-FileHash $source).Hash
-    & $CMake @apply 2>&1 | Out-Host
-    if ($LASTEXITCODE -eq 0) { throw 'Conflicting source was accepted' }
+    $previousErrorActionPreference = $ErrorActionPreference
+    try {
+        # Windows PowerShell 5.1 turns redirected native stderr into error records.
+        $ErrorActionPreference = 'Continue'
+        $conflictOutput = & $CMake @apply 2>&1
+        $conflictExitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $previousErrorActionPreference
+    }
+    $conflictText = ($conflictOutput | ForEach-Object { $_.ToString() }) -join "`n"
+    if ($conflictExitCode -ne 1 -or $conflictText -notmatch 'Native patch conflicts with checkout; preserving local changes') {
+        throw "Expected the native patch conflict diagnostic and exit code 1; got $conflictExitCode. $conflictText"
+    }
     if ((Get-FileHash $source).Hash -ne $conflicting) { throw 'Conflicting source was modified' }
     Write-Output 'PASS: clean application, idempotence, reversibility, conflict rejected without data loss'
 } finally {

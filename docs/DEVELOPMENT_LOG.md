@@ -72,3 +72,9 @@ The final documentation checkpoint updates AGENTS, README/pt-BR downloads, candi
 ## Permanent signing certificate checkpoint
 
 Owner created the permanent external identity locally; public DER SHA-256 matches the supplied e19c9d002254a776d6b19c0ad2c1dcee01971a46971d5d1fb915867bd6530a2a. Only the public pin is added. Password/private key are not read. Backup completion and signed preparation remain pending. Connected the owner-provided emulator at127.0.0.1:5555: Android9/API28, x86_64 with advertised ARM64 through libnb native translation. No Auviora package is installed; installation/runtime results must be recorded separately from physical ARM64 evidence.
+
+## Windows PowerShell 5.1 negative-fixture fix
+
+Public pin checkpoint: 489a1d0. The owner's signed preparation failed before APK compilation because Windows PowerShell 5.1 promoted the expected CMake conflict stderr into a terminating NativeCommandError under Stop. Reproduced the exact failure before editing. The fixture runner now scopes Continue only around expected-failure capture, restores the preference, and requires exit code 1 plus the conflict diagnostic and unchanged fixture source. Engine, native patch, dependencies and signing identity remain unchanged.
+
+Fixture validation passed on Windows PowerShell 5.1.19041.3803 and PowerShell 7.6.5 with native error-action preference enabled. Complete unsigned preparation on 5.1 passed: 9s incremental release assembly, five cached core JVM test results, release lint 0 errors/13+1+0 warnings and metadata/native/alignment/notice/weight checks. All six release-verifier cases passed again (17.733s); 27 Markdown files and 143 local references passed. The ignored powershell51-patch-fix-check candidate is explicitly unsigned and records dirty parent source; never distribute it. Owner-local signed retry and backup confirmation are still required. No tag, push, release, installation or Phase 3.
