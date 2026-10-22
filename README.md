@@ -21,6 +21,14 @@ Auviora is an offline-first AI application built with Kotlin and Jetpack Compose
 
 **Development preview: `0.1.0-alpha.1` (code 1).** The application foundation and real offline text inference have been validated on Android hardware. There is no published APK release or bundled model. Auviora is being built toward multimodal assistance; the current chat accepts **text only**. The backend includes a vision projector, but image attachment and vision validation in this application remain future work.
 
+## Download the Alpha
+
+[**GitHub Releases — Auviora Alpha**](https://github.com/eobarretooo/Auviora/releases)
+
+The release process is being established for **v0.1.0-alpha.1**. A signed downloadable APK has not been published yet; do not install or distribute an unsigned local candidate. When available, download the ARM64 APK and SHA256SUMS.txt from the actual release and compare the APK with `Get-FileHash FILE.apk -Algorithm SHA256` before installation.
+
+The build requires an ARM64 device with API 24+; hardware evidence is currently Android 16 only. Model files are downloaded separately (approximately 1.78 GB); downloading uses internet, inference after provisioning is local. A release certificate differs from debug: replacing a debug installation may require uninstalling, which deletes private conversations and downloaded models. **No automatic uninstall is performed.** Read the [release process](docs/RELEASE_PROCESS.md), [Alpha notes](docs/releases/v0.1.0-alpha.1.md) and [changelog](docs/CHANGELOG.md) before installing.
+
 ## What works today
 
 - **Local streamed chat:** real generated tokens, visible engine states and a Stop control.

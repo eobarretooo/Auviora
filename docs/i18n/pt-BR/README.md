@@ -26,3 +26,11 @@ O modelo compacto pode misturar idiomas, inventar sua identidade e errar fatos. 
 - [Relatório da fase 2.1](../../PHASES/PHASE_02_1.md), [contribuições](../../CONTRIBUTING.md) e [changelog](../../CHANGELOG.md)
 
 A documentação técnica em inglês é a fonte canônica. Licenças e créditos do código reutilizado foram preservados; os pesos têm termos próprios e a redistribuição da conversão ainda exige revisão. Nenhuma publicação, envio ao GitHub ou fase 3 foi iniciada automaticamente.
+
+## Distribuição Alpha
+
+Acompanhe a página real de [GitHub Releases](https://github.com/eobarretooo/Auviora/releases). A preparação da versão v0.1.0-alpha.1 está em andamento; ainda não há APK assinado publicado. Não existe link direto de download anunciado antes da publicação verificada.
+
+Quando disponível, baixe o APK ARM64 e o SHA256SUMS.txt da mesma release e compare com `Get-FileHash ARQUIVO.apk -Algorithm SHA256`. O modelo é obtido separadamente, com aproximadamente 1,78 GB. API mínima 24 é um requisito de compilação; o aparelho validado usa Android 16.
+
+A assinatura definitiva será diferente da assinatura de depuração. Uma eventual desinstalação apaga conversas e GGUFs privados; o aplicativo ainda não oferece exportação do histórico. Nenhuma desinstalação é automática. Consulte o [processo de release](../../RELEASE_PROCESS.md), as [notas Alpha](../../releases/v0.1.0-alpha.1.md) e o [changelog](../../CHANGELOG.md).

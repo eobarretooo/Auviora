@@ -57,4 +57,4 @@ Local Windows automation is the validated path; hosted Actions signing/publicati
 
 ## Commit checkpoints
 
-Phase 2.1 baseline: af794a2. Checkpoint54c17ef records signing/provenance and runtime notices; subsequent tooling/documentation hashes are in the handoff/log. Retrieve the closure source with `git log -1 --format=%h -- docs/AI_HANDOFF.md`; it is separate from any future release tag.
+Phase 2.1 baseline: af794a2. Checkpoint 54c17ef records signing/provenance and runtime notices; 99330c6 records candidate/explicit publication tooling and test evidence. The closure documentation commit is recorded in the delivery and is the source for final unsigned staging. Retrieve the closure source with `git log -1 --format=%h -- docs/AI_HANDOFF.md`; it is separate from any future release tag.

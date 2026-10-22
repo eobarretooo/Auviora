@@ -5,6 +5,14 @@ All notable changes are documented here using Keep a Changelog conventions and S
 ## [Unreleased]
 
 ### Added
+- Controlled Windows release-signing setup, candidate build/verification and explicit GitHub draft/publication scripts.
+- Bundled third-party notices, resolved dependency inventory and scoped binary redistribution audit.
+- Release source-commit provenance, signature/certificate/metadata/alignment/weight/checksum gates and verifier regression checks.
+- Version-specific Alpha notes and release/update/recovery documentation.
+
+## [0.1.0-alpha.1] - 2026-10-22 (candidate; not published)
+
+### Added
 - Phase 2.1 authentic Android screenshot gallery and offline streaming GIF with provenance, hashes and reproducible ADB/FFmpeg media/link scripts.
 - Professional English README, expanded pt-BR guide, contribution instructions and evidence-based Android quality backlog.
 - Independent Auviora Android identity and 0.1.0-alpha.1 development version (code 1); no published release/tag.
@@ -27,4 +35,4 @@ All notable changes are documented here using Keep a Changelog conventions and S
 - Draft preservation during model load and accurate visible engine states.
 - Test-frame-clock observation and asynchronous network teardown verification.
 
-There is no released version section yet. Do not create tags or publish packages without explicit authorization.
+The dated version section describes the prepared Alpha candidate, not a published release. No tag or public asset exists until signing and all release gates pass.

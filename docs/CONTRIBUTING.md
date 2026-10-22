@@ -8,4 +8,4 @@ Inference must remain local. UI code consumes core contracts; JNI stays in infer
 
 For source/build changes, run the build, relevant JVM/lint checks and opt-in hardware tests described in Testing. For documentation/media changes, run the [media and link workflow](media/README.md), inspect visuals and preserve original evidence. Never stage weights, APKs, raw recordings/logs, local SDK paths, credentials or device identifiers.
 
-Use small Conventional Commits, update the changelog and handoff, and report untested paths explicitly. Phase 3, automation, publication, tags and pushes require explicit authorization. No released package or issue-tracker URL is assumed.
+Use small Conventional Commits, update the changelog and handoff, and report untested paths explicitly. Phase 3 and automation require explicit new scope. Phase 2.2 permits only the controlled release operations in [Release process](RELEASE_PROCESS.md) after all gates; never publish unsigned/debug APKs or private signing material. No released package or issue-tracker URL is assumed.

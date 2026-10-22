@@ -1,6 +1,18 @@
 # Auviora — AI handoff
 
-Updated 2026-10-22. **Phase 2.1 presentation COMPLETE; Phase 2.0 foundation remains validated for tested workloads. Phase 3 NOT STARTED.** Development build only; model quality/publication are not approved.
+Updated 2026-10-22. **Phase 2.2 release infrastructure/candidate validated; public Alpha blocked pending owner signing identity and signed-candidate gates. Phase 3 NOT STARTED.** Version remains 0.1.0-alpha.1 (1); no tag/release/public artifact created.
+
+## Phase 2.2 continuation checkpoint
+
+Existing origin https://github.com/eobarretooo/Auviora.git is PUBLIC; GitHub CLI 2.103.0 is already installed/authenticated via credential store with ADMIN repository access. Initial remote main matched af794a2; no tags/releases existed. No duplicate repository, login, installation or unrelated permission change was needed.
+
+Read [release process](RELEASE_PROCESS.md), [Phase 2.2](PHASES/PHASE_02_2.md), [Alpha notes](releases/v0.1.0-alpha.1.md) and [binary audit](legal/RELEASE_AUDIT.md). New scripts: setup-release-key.ps1 (owner local interactive), prepare-release.ps1 (signed or explicitly unsigned build), release.py (APK/signature/source/metadata/native/weight/notice/checksum checks), collect-release-notices.py, test-release.py and publish-release.py (explicit controlled draft/publish). Credentials/private keys never enter Git; public certificate pin is required for signed staging. No hosted Actions job is assumed tested.
+
+Unsigned local workflow passed release build, five shared core JVM tests, release lint with 0 errors / 13+1+0 warnings, native patch fixtures and artifact checks. Six verifier cases include hostile local ZIP fixtures; publisher rejects unsigned candidates before remote mutation. Runtime inventory 106 modules/74 cached artifacts, original notice bundle packaged in APK. Fresh debug hardware navigation/history 4/4, offline inference/cancel/reload 1/1 and streaming 1/1 passed; these are not signed-release device results. Debug certificate differs from a new release key; no automatic uninstall/data export was performed.
+
+Owner selected creation of a new permanent key and intends backups, but completion/key presence has not been observed. Do not interpret that intent as a created/approved certificate or verified backups. The default external identity path is the owner's home/.auviora/signing/identity.json. No public certificate pin exists yet. Next: owner finishes interactive setup and backups, commit only the public pin, run signed preparation locally, inspect exact reports, then use draft and publish only if every gate passes. Until then keep an explicitly UNSIGNED local candidate. No tag, source push, draft, release or direct APK URL was invented. Candidate/checksum/source evidence lives in ignored artifacts/releases; final staging must follow the final committed source.
+
+Phase 2.2 checkpoints: 54c17ef (owner signing/provenance/runtime notices) and 99330c6 (candidate verification, explicit publication tooling and current test evidence). The closure documentation commit is retrieved with `git log -1 --format=%h -- docs/AI_HANDOFF.md`; final candidate verification.json records its full commit after rebuilding. No release tag is associated with these development commits.
 
 ## Phase 2.1 continuation checkpoint
 
@@ -10,7 +22,7 @@ Fresh manual device capture used the exact installed Phase 2.0 APK hash. All eig
 
 ## Current implementation
 
-- Independent repository/application: app.auviora.android, display Auviora, version 0.1.0-alpha.1 / code 1. No remote/push/release/tag. Reference OpenBMB checkout remains at d416a13, unchanged except its pre-existing documented native patch.
+- Independent repository/application: app.auviora.android, display Auviora, version 0.1.0-alpha.1 / code 1. Existing GitHub origin as above; no Phase 2.2 push/release/tag. Reference OpenBMB checkout remains at d416a13, unchanged except its pre-existing documented native patch.
 - Three modules: core (contracts/profile/integrity), inference (serial native owner/JNI/CMake) and app (composition/ViewModel/Compose/data). No permanent sibling-checkout dependency.
 - Public engine gitlink 96bbf61710d44421ea54e63f5194f9b17c20d877. Parent-owned F_NOCACHE patch applies automatically and passes clean/idempotent/reverse/conflict tests. Expected dirty vendor submodule contains only src/llama-moe-slot.cpp. Never discard it or commit a local-only engine pointer.
 - Original Material 3 dark/light/system/dynamic theme, vector brand and left drawer (closed on phones; collapsible sidebar>=840dp). No bottom navigation. Chat/Models/disabled Agents/Settings are implemented. English/pt-BR selector works via AppCompat; 71 paired string resources.
@@ -44,9 +56,9 @@ Closing documentation commit: retrieve with `git log -1 -- docs/AI_HANDOFF.md` (
 
 ## Boundaries and exact next action
 
-Do not start Phase 3 automatically. Next action is user review of the presentation, media and quality backlog, followed by an explicit instruction selecting the next development scope. Candidates: image attachments with new-app vision validation, saved-context/history management or additional lifecycle/device tests. Preserve the tested profile, model-quality failures, legal attribution and source baseline.
+Do not start Phase 3 automatically. Next action is completing the owner-managed signing/release gates above. Any product-feature development still requires explicit new scope. Candidates: image attachments with new-app vision validation, saved-context/history management or additional lifecycle/device tests. Preserve the tested profile, model-quality failures, legal attribution and source baseline.
 
-Not implemented: agents/tools, advanced memory, background automation, unrestricted control, TTS/video/image-attachment UI, advanced resumable/background downloads, history export/delete/migration/context restoration. SAF import exists but interactive picker/provider behavior was not separately tested. Tablet/light/dynamic visual matrices, TalkBack/font scaling, long contexts and extended stress are unverified. Compact-model Portuguese mixing, false identity and factual errors remain. Model conversion redistribution and binary notice assembly need publication review; no package/weight publication is authorized.
+Not implemented: agents/tools, advanced memory, background automation, unrestricted control, TTS/video/image-attachment UI, advanced resumable/background downloads, history export/delete/migration/context restoration. SAF import exists but interactive picker/provider behavior was not separately tested. Tablet/light/dynamic visual matrices, TalkBack/font scaling, long contexts and extended stress are unverified. Compact-model Portuguese mixing, false identity and factual errors remain. Model conversion redistribution remains unapproved; reviewed binary notice assembly is now packaged separately from model terms. APK pre-release publication is authorized only after Phase 2.2 gates; model weights are never attached.
 
 ## Commands
 
