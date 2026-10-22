@@ -1,0 +1,4 @@
+[submodule "vendor/llama.cpp-omni"]
+	path = vendor/llama.cpp-omni
+	url = https://github.com/tc-mb/llama.cpp-omni.git
+	shallow = true
