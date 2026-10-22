@@ -38,4 +38,4 @@ Review the README, media and backlog, then explicitly choose any next developmen
 
 ## Commit checkpoints
 
-Phase 2.0 baseline: `3ed2d8e`. Phase 2.1 commit hashes are recorded in the final handoff and delivery. For the self-containing closure commit use `git log -1 --format=%h -- docs/PHASES/PHASE_02_1.md`.
+Phase 2.0 baseline: `3ed2d8e`. Phase 2.1: `6afbeec` adds reproducible media/documentation scripts and work log; `fbc407e` integrates authentic media, README and canonical documentation. The closure commit records the final checks and these checkpoints. For the self-containing closure commit use `git log -1 --format=%h -- docs/PHASES/PHASE_02_1.md`.
