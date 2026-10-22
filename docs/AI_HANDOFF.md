@@ -2,6 +2,12 @@
 
 Updated 2026-10-22. **Phase 2.2 release infrastructure/candidate validated; public Alpha blocked pending owner signing identity and signed-candidate gates. Phase 3 NOT STARTED.** Version remains 0.1.0-alpha.1 (1); no tag/release/public artifact created.
 
+## Permanent certificate checkpoint (2026-10-22)
+
+The owner created the permanent RSA4096 identity locally and supplied its public fingerprint. The external public DER and password-free identity metadata independently match e19c9d002254a776d6b19c0ad2c1dcee01971a46971d5d1fb915867bd6530a2a; CN=Auviora Android Release, validity through 2054. Only the public pin is tracked. Key password is unknown to the agent and must remain in the owner's local terminal. Backup completion is not yet confirmed.
+
+Emulator 127.0.0.1:5555 is available: Android 9/API 28, x86_64 host ABI with advertised arm64-v8a support through libnb.so native translation. Treat translated execution separately from physical ARM64 evidence. The app is not installed there. Next: run signed prepare-release.ps1 locally, confirm backups, then verify/install the exact signed candidate on this emulator without touching physical-device debug data. No tag/release/publication yet. Earlier pending-identity text below describes the unsigned preparation checkpoint.
+
 ## Phase 2.2 continuation checkpoint
 
 Existing origin https://github.com/eobarretooo/Auviora.git is PUBLIC; GitHub CLI 2.103.0 is already installed/authenticated via credential store with ADMIN repository access. Initial remote main matched af794a2; no tags/releases existed. No duplicate repository, login, installation or unrelated permission change was needed.
