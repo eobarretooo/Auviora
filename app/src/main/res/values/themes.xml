@@ -1,0 +1,6 @@
+<resources><style name="Theme.Auviora" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <item name="android:fontFamily">sans</item>
+    <item name="android:windowLightStatusBar">false</item>
+    <item name="android:windowActionModeOverlay">true</item>
+    <item name="android:windowBackground">#0B1020</item>
+</style></resources>
