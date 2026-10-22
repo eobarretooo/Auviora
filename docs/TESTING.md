@@ -59,3 +59,11 @@ python scripts/media.py check docs/media/gifs/offline-inference.gif
 ```
 
 Run the media checker on `docs/media/screenshots/*.png` paths too (expand them in PowerShell with Get-ChildItem, or list individual files). It verifies dimensions/size and GIF frame count/duration; human privacy/authenticity review remains necessary. PNG/GIF decoding, all local links, fenced blocks, GFM parsing and desktop/mobile local preview were checked; see [Phase 2.1](PHASES/PHASE_02_1.md). These checks add presentation evidence; they do not replace the historical app/JVM/lint/device suites above. Exact current checks and asset hashes are in the report and manifest.
+
+## Phase 2.2 release gates
+
+Release configuration now supports an explicit unsigned candidate and an owner-managed signed build. `./scripts/prepare-release.ps1 -UnsignedCandidate` runs the actual local build, resolved notice collection, patch fixture, five shared core JVM tests, release lint and APK staging checks. Omit the switch only after committing the permanent public certificate pin; the script prompts locally for the keystore password. Release/lintRelease without signing fails closed unless the unsigned property is explicitly selected.
+
+`python scripts/test-release.py -v` requires the built unsigned APK and ANDROID_HOME. It checks a real candidate and rejection of unsigned distribution, debug APKs, hidden GGUF fixtures, changed notices and stale embedded source commits. ZIP fixtures are ignored and are not inference evidence. The verifier also checks all ten native ELF alignments, ZIP alignment, compiled identity/version/ABI/SDK and exact source/notice assets.
+
+Fresh hardware debug source-regression tests: navigation/history 4/4, actual offline inference/cancel/reload 1/1 and visible streaming 1/1 PASS. Debug update preserved private data/weights. Those results do not assert a permanent-key release APK was installed. The debug certificate differs from the intended release identity; no automatic uninstall or data transfer occurs. Detailed status, logs and limits: [Phase 2.2](PHASES/PHASE_02_2.md), [release process](RELEASE_PROCESS.md).

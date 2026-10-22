@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-22",
+  "versionName": "0.1.0-alpha.1",
+  "versionCode": 1,
+  "debug_apk_sha256": "e0b5161e8fdf970486a337912a27bcfa1ac6dbd08b58e80afad49c23c80aaab0",
+  "release_build": "PASS unsigned candidate only",
+  "core_jvm": {
+    "passed": 5,
+    "failed": 0
+  },
+  "release_lint": {
+    "app": {
+      "errors": 0,
+      "warnings": 13
+    },
+    "core": {
+      "errors": 0,
+      "warnings": 1
+    },
+    "inference": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "release_verifier_cases": {
+    "passed": 6,
+    "failed": 0
+  },
+  "publisher_unsigned_rejection": "PASS before remote mutation",
+  "native_patch": "PASS clean/idempotent/reverse/conflict fixture and exact actual diff",
+  "hardware_debug": {
+    "android_api": 36,
+    "abi": "arm64-v8a",
+    "navigation_history_passed": 4,
+    "offline_inference_cancel_reload_passed": 1,
+    "offline_streaming_passed": 1,
+    "distinct_visible_updates": 27,
+    "network_settings_restored": true
+  },
+  "signed_release_signature_verified": false,
+  "signed_release_device_tested": false,
+  "github_release_created": false,
+  "reason": "Owner permanent signing identity/public pin and signed candidate pending. No uninstall or data export."
+}
